@@ -46,11 +46,11 @@ On this project, the OSEMiN data science workflow was adopted.
 
 # Question 1 - Zip code vs. Sub Region.
 <p>&nbsp;</p>
-At first glence, the zip code column in the dataset seemed too complex. It was assumed that having 70 one hot-encoded zip code features would hurt the model's interpretability, so it was decided to compress all of them into 10 sub regions. Linear Regression Models were made for both options to see how having sub regions would affect the model's performance. Below are the models summaries:
+At first glance, the zip code column in the dataset seemed too complex. It was assumed that having 70 one hot-encoded zip code features would hurt the model's interpretability, so it was decided to compress all of them into 10 sub regions. Linear Regression Models were made for both options to see how having sub regions would affect the model's performance. Below are the models summaries:
+<p> </p>
 
 **<font size="4"> Sub Region Linear Regression Model Results:</font>**
 <p>&nbsp;</p>
-
 <img src="./Sub Region Model.png" width=600 height=400 />
 <p>&nbsp;</p><p>&nbsp;</p>
 
@@ -59,22 +59,23 @@ At first glence, the zip code column in the dataset seemed too complex. It was a
 <img src="./ZipCode Model.png" width=600 height=400 />
 <p>&nbsp;</p>
 
-**Conclusion** - By using zip codes instead of sub regions, the R^2 improved drastically from 71.7% to 82.2%. This means that generalizing zip codes into regions did not help the model because there is a high price variation from city to city. Even though the zip code model has 54 extra features, they are all one hot-encoded features. The residual distributions for both models are very similar, both having dificulties with high value houses.
+**Conclusion** - By using zip codes instead of sub regions, the R^2 improved drastically from 71.7% to 82.2%. This means that generalizing zip codes into regions did not help the model because there is a high price variation from city to city. Even though the zip code model has 54 extra features, they are all one hot-encoded features. The residual distributions for both models are very similar, both having difficulties with high value houses.
 
 # Question 2 - Log Transforming Target
 <p>&nbsp;</p>
-Log transforming is used reduce or remove skewness when the original data doesn't follow a normal distribution. In statistics, it is desireable to make the as “normal” as possible so that the statistical analysis results from this data become more valid, but by doing so, the result becomes more complex. Based on this, an attempt on log transforming the target value (Price) was made. It was assumed that by doing so, it would drastically improve the model's performance. 
+Log transforming is used reduce or remove skewness when the original data doesn't follow a normal distribution. In statistics, it is desirable to make the as “normal” as possible so that the statistical analysis results from this data become more valid, but by doing so, the result becomes more complex. Based on this, an attempt on log transforming the target value (Price) was made. It was assumed that by doing so, it would drastically improve the model's performance. 
+<p> </p>
 
 **<font size="4"> Zip Code + Log Price Linear Regression Model Results:</font>**
 <p>&nbsp;</p>
-<img src="./ZipCode Log Model.png" width=600 height=400 />
+<img src="./log price.png" width=600 height=400 />
 <p>&nbsp;</p>
 
 **Conclusion** - By log transforming the target value (Price), the interpretability of the model decreased drastically without adding too much benefit. The R^2 only increased around 1%. The best model is still the one  which uses the zip codes instead of sub regions
 
 # Question 3 - Best and Worst Features
 
-In order to determine which are the most and the least meaningful features, it was required to standardize the data. On previous models, we saw how each feature affected price, meaning by increasing 1 unit of that feature, it would impact the price by x number of dollars, which was determined by the coefficients. Now by standadizing the data, we will be able to see the 'weight' of each feature. Below are the sorted feature coeficients from the zip code model.
+In order to determine which are the most and the least meaningful features, it was required to standardize the data. On previous models, we saw how each feature affected price, meaning by increasing 1 unit of that feature, it would impact the price by x number of dollars, which was determined by the coefficients. Now by standardizing the data, we will be able to see the 'weight' of each feature. Below are the sorted feature coefficients from the zip code model.
 
 **<font size="4"> Sorted Features (Zip Code Model):</font>**
 <p>&nbsp;</p>
@@ -84,6 +85,7 @@ Some of the most important features in a house are being located near the waterf
 <p>&nbsp;</p>
 <img src="./Grade vs. Price.png" width=600 height=600 />
 <p>&nbsp;</p>
+
 **The average house price increases with grade indicating that these features are positively correlated.**
 
 Some of the least important features are number of bedrooms and bathrooms, lot size, and whether the house was renovated or not.
@@ -107,7 +109,7 @@ Some of the least important features are number of bedrooms and bathrooms, lot s
      
         1- Increase the living square footage of the house. Living square footage is worth more than lot square footage.
         
-        2 - Improve the overall grade of the house. If the house is being renovated, invest in high quality materials and luxurious items. Hire an archtect to create a custom design.
+        2 - Improve the overall grade of the house. If the house is being renovated, invest in high quality materials and luxurious items. Hire an architect to create a custom design.
         
          
    * Based on the regression model's output, the following things are not recommended when the goal is to increase a house's value:
@@ -116,4 +118,4 @@ Some of the least important features are number of bedrooms and bathrooms, lot s
         
         2- Renovating a house might not increase it's value. If you plan to renovate, increase the total living square footage and investing in high quality materials.
         
-        3- Don't go crazy and buy a portion of your neighboor's backyard to increase your lot size. The only way that it will help you is if the lot you buy has a waterfront view.
+        3- Don't go crazy and buy a portion of your neighbor's backyard to increase your lot size. The only way that it will help you is if the lot you buy has a waterfront view.
