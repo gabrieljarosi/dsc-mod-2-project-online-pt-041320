@@ -51,12 +51,12 @@ At first glance, the zip code column in the dataset seemed too complex. It was a
 
 **<font size="4"> Sub Region Linear Regression Model Results:</font>**
 <p>&nbsp;</p>
-<img src="./Sub Region Model.png" width=600 height=400 />
+<img src="./images/Sub Region Model.png" width=600 height=400 />
 <p>&nbsp;</p><p>&nbsp;</p>
 
 **<font size="4"> Zip Code Linear Regression Model Results:</font>**
 <p>&nbsp;</p>
-<img src="./ZipCode Model.png" width=600 height=400 />
+<img src="./images/ZipCode Model.png" width=600 height=400 />
 <p>&nbsp;</p>
 
 **Conclusion** - By using zip codes instead of sub regions, the R^2 improved drastically from 71.7% to 82.2%. This means that generalizing zip codes into regions did not help the model because there is a high price variation from city to city. Even though the zip code model has 54 extra features, they are all one hot-encoded features. The residual distributions for both models are very similar, both having difficulties with high value houses.
@@ -68,7 +68,7 @@ Log transforming is used reduce or remove skewness when the original data doesn'
 
 **<font size="4"> Zip Code + Log Price Linear Regression Model Results:</font>**
 <p>&nbsp;</p>
-<img src="./log price.png" width=600 height=400 />
+<img src="./images/log price.png" width=600 height=400 />
 <p>&nbsp;</p>
 
 **Conclusion** - By log transforming the target value (Price), the interpretability of the model decreased drastically without adding too much benefit. The R^2 only increased around 1%. The best model is still the one  which uses the zip codes instead of sub regions
@@ -79,11 +79,11 @@ In order to determine which are the most and the least meaningful features, it w
 
 **<font size="4"> Sorted Features (Zip Code Model):</font>**
 <p>&nbsp;</p>
-<img src="./features.png" width=400 height=400 />
+<img src="./images/features.png" width=200 height=400 />
 <p>&nbsp;</p>
 Some of the most important features in a house are being located near the waterfront, sqft living, grade, and age of the house when sold. Since only the features that can be controlled are being taken in consideration, the 'Grade' feature was analyzed further. 
 <p>&nbsp;</p>
-<img src="./Grade vs. Price.png" width=600 height=600 />
+<img src="./images/Grade vs. Price.png" width=600 height=600 />
 <p>&nbsp;</p>
 
 **The average house price increases with grade indicating that these features are positively correlated.**
