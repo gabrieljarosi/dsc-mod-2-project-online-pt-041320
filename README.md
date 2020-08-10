@@ -79,7 +79,7 @@ In order to determine which are the most and the least meaningful features, it w
 
 **<font size="4"> Sorted Features (Zip Code Model):</font>**
 <p>&nbsp;</p>
-<img src="./images/features.png" width=200 height=400 />
+<img src="./images/features.png" width=300 height=400 />
 <p>&nbsp;</p>
 Some of the most important features in a house are being located near the waterfront, sqft living, grade, and age of the house when sold. Since only the features that can be controlled are being taken in consideration, the 'Grade' feature was analyzed further. 
 <p>&nbsp;</p>
